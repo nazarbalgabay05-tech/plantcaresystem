@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Project | Balgabay Nazar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-orange: #ff6600;
+            --bg-black: #050505;
+            --card-bg: #111111;
+            --text-main: #e0e0e0;
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* HEADER SECTION */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                        url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80');
+            background-size: cover;
+            border-bottom: 5px solid var(--neon-orange);
+        }
+
+        header h2 { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 8px; color: #888; margin: 0; }
+        header h1 { font-family: 'Syncopate', sans-serif; font-size: 4rem; color: var(--neon-orange); margin: 20px 0; text-shadow: 0 0 30px rgba(255,102,0,0.6); }
+        .hero-badge { border: 2px solid var(--neon-orange); padding: 10px 30px; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        /* INTERACTIVE BUTTONS */
+        .accordion {
+            background-color: var(--card-bg);
+            color: white;
+            cursor: pointer;
+            padding: 35px;
+            width: 100%;
+            border: 1px solid #222;
+            text-align: left;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .accordion:hover { border-color: var(--neon-orange); background-color: #1a1a1a; box-shadow: 0 0 20px rgba(255,102,0,0.1); }
+        .active { background-color: var(--neon-orange); color: black; border-color: var(--neon-orange); }
+
+        .panel {
+            background-color: #0c0c0c;
+            max-height: 0;
+            overflow: hidden;
+            border-left: 3px solid var(--neon-orange);
+            margin-bottom: 15px;
+            padding: 0 50px;
+        }
+
+        /* TEXT STYLING */
+        h3 { color: var(--neon-orange); font-family: 'Syncopate', sans-serif; margin-top: 40px; }
+        p { line-height: 1.9; font-size: 1.1rem; color: #bbb; }
+
+        /* COMPONENT BOXES */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            margin: 50px 0;
+            align-items: center;
+            background: rgba(255,102,0,0.03);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .comp-grid img { width: 100%; border-radius: 10px; border: 1px solid #444; }
+        .comp-grid:hover img { border-color: var(--neon-orange); transform: scale(1.03); }
+
+        /* FINAL PRODUCT IMAGE */
+        .final-product-box { text-align: center; padding: 50px 0; }
+        .final-img {
+            width: 100%;
+            max-width: 850px;
+            border: 8px solid var(--neon-orange);
+            border-radius: 15px;
+            box-shadow: 0 0 60px rgba(255,102,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        footer { text-align: center; padding: 80px; font-family: 'Syncopate', sans-serif; font-size: 0.8rem; color: #444; letter-spacing: 3px; }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>PERSONAL PROJECT</h2>
+    <h1>BALGABAY NAZAR</h1>
+    <div class="hero-badge">Plant Care System v1.0</div>
+</header>
+
+<div class="container">
+
+    <button class="accordion">01. LEARNING & PRODUCT GOALS</button>
+    <div class="panel">
+        <h3>Primary Objectives</h3>
+        <p><strong>Learning Goal:</strong> My mission was to master the integration of hardware and software. I aimed to understand the C++ programming language within the Arduino environment, learning how to write efficient algorithms that respond to real-time environmental data. Beyond coding, I focused on electrical safety, voltage step-down techniques, and structural engineering using plywood.</p>
+        <p><strong>Product Goal:</strong> To build a fully autonomous ecosystem for indoor plants. The goal was to eliminate human error in plant maintenance. The product serves as a reliable "automated gardener" that monitors soil hydration and light availability, activating irrigation and lighting only when necessary. The design had to be visually striking, professional, and durable.</p>
+    </div>
+
+    <button class="accordion">02. ATL SKILLS DEVELOPMENT</button>
+    <div class="panel">
+        <h3>Approaches to Learning</h3>
+        <p><strong>Self-Management:</strong> This project required rigorous time management. I utilized an Action Plan to navigate from initial research in October to the final assembly in February. Even when components failed, I maintained a strict schedule to ensure a 10-page report and a functional prototype were ready for the exhibition.</p>
+        <p><strong>Research:</strong> I practiced high-level information literacy by conducting CARDS analysis on technical suppliers like <em>medsvet.kz</em>. This research was vital for selecting the correct DC-DC converters to protect my Arduino from high-voltage damage.</p>
+    </div>
+
+    <button class="accordion">03. HARDWARE ARCHITECTURE (COMPONENTS)</button>
+    <div class="panel">
+        
+        <div class="comp-grid">
+            <img src="arduino.jpg" alt="Arduino Uno">
+            <div>
+                <h3>Arduino Uno R3</h3>
+                <p>The "Brain." This microcontroller executes the entire logic of the system. It reads signals from sensors every second and determines if the pump or LEDs need to be activated. It is the heart of the automation process.</p>
+            </div>
+        </div>
+
+        <div class="comp-grid">
+            <img src="ldr.jpg" alt="LDR Sensor">
+            <div>
+                <h3>LDR (Light Dependent Resistor)</h3>
+                <p>The "Eyes." This sensor detects how much light is hitting the plant. If the room is too dark, it tells the Arduino to turn on the LED strips, ensuring the plant can always perform photosynthesis.</p>
+            </div>
+        </div>
+
+        <div class="comp-grid">
+            <img src="led_strip.jpg" alt="LED Strip">
+            <div>
+                <h3>High-Intensity LED Strip</h3>
+                <p>The "Sunlight." When natural light is insufficient, these LEDs provide the necessary light energy. They are mounted on the top of the tower to cover the plant's leaves effectively.</p>
+            </div>
+        </div>
+
+        <div class="comp-grid">
+            <img src="pump.jpg" alt="Water Pump">
+            <div>
+                <h3>12V Water Pump</h3>
+                <p>The "Muscles." This submersible pump moves water from the internal tank to the soil. It is triggered by the moisture sensor to deliver water directly to the roots.</p>
+            </div>
+        </div>
+
+        <div class="comp-grid">
+            <img src="moisture_sensor.jpg" alt="Soil Sensor">
+            <div>
+                <h3>Soil Moisture Sensor</h3>
+                <p>The "Nervous System." It measures the water content in the soil. Without this, the system wouldn't know when the plant is thirsty. It prevents both overwatering and dehydration.</p>
+            </div>
+        </div>
+
+        <div class="comp-grid">
+            <img src="dht11.jpg" alt="DHT11">
+            <div>
+                <h3>DHT11 (Temp & Humidity)</h3>
+                <p>The "Climate Monitor." This sensor tracks the air temperature and humidity. This data is displayed on the TFT screen, giving a complete overview of the plant's living conditions.</p>
+            </div>
+        </div>
+
+        <div class="comp-grid">
+            <img src="dc_dc.jpg" alt="Buck Converter">
+            <div>
+                <h3>LM2596 DC-DC Converter</h3>
+                <p>The "Protector." It takes the 12V power from the battery and lowers it to a safe 5V. This ensures the Arduino doesn't burn out while still providing enough power for the heavy-duty pump.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; border-top: 1px solid #333; padding-top: 30px;">
+            <h3>AI-OPTIMIZED CIRCUIT SCHEME</h3>
+            <img src="scheme.jpg" alt="Circuit Schematic" style="width: 100%; max-width: 900px; border: 2px solid var(--neon-orange); margin-top: 20px;">
+        </div>
+    </div>
+
+    <button class="accordion">04. THE FINAL PROTOTYPE</button>
+    <div class="panel">
+        <div class="final-product-box">
+            <img src="WhatsApp Image 2026-02-24 at 19.48.54.jpeg" alt="Final Product Balgabay Nazar" class="final-img">
+            <h3>Design Analysis</h3>
+            <p>The final design represents an industrial-cyber aesthetic. Using <strong>Plywood</strong> provided a sturdy frame, while the <strong>Black Finish</strong> and <strong>Neon Orange accents</strong> highlight the intersection of nature and technology. The layout ensures all wires are hidden, and the interactive TFT screen provides immediate feedback. This is the culmination of months of engineering and aesthetic refinement.</p>
+        </div>
+    </div>
+
+    <button class="accordion">05. FINAL REFLECTION</button>
+    <div class="panel">
+        <div style="padding: 40px 0;">
+            <p>Completed on February 21st, 2026, this project has been my most significant academic challenge. I have learned that engineering is not just about success, but about how you handle failure. From fixing short circuits to optimizing code with AI, I developed a "Growth Mindset." I am now confident in my ability to design, build, and document complex technical solutions that can improve our daily lives.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    BALGABAY NAZAR // MYP PERSONAL PROJECT // 2026
+</footer>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+    }
+</script>
+
+</body>
+</html>
